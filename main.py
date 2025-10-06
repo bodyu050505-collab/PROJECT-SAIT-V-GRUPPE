@@ -9,6 +9,7 @@ def index():
 
 @app.route("/add", methods=["POST"])
 def add():
+    user_input = request.form['user_input']
     return render_template("add.html")
 
 @app.route("/delete")
