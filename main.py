@@ -7,9 +7,11 @@ app = Flask(__name__)
 def index():
     return render_template("index2.html")
 
-@app.route("/add", methods=["POST"])
+@app.route("/add", methods=["GET", "POST"])
 def add():
-    user_input = request.form['user_input']
+    if request.method == "POST":
+        user_input = request.form.get("user_input", "")
+        print(user_input)
     return render_template("add.html")
 
 @app.route("/delete")
