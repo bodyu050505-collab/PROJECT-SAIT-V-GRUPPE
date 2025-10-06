@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spislist3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="warning-icon">⚠️</div>
+        <h1>Удаление задачи</h1>
+        <p>Вы уверены, что хотите удалить эту задачу? Это действие нельзя отменить.</p>
+        
+        <div class="task-preview">
+            <div class="task-title" id="taskTitle">Загрузка...</div>
+            <div class="task-description" id="taskDescription">Описание загружается...</div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-delete" onclick="confirmDelete()">Да, удалить</button>
+            <button class="btn btn-cancel" onclick="cancelDelete()">Отмена</button>
+        </div>
+
+        <a href="index.html" class="back-link">← Вернуться к списку дел</a>
+    </div> 
+</body>
+</html>
