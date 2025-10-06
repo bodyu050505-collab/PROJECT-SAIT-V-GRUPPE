@@ -19,8 +19,17 @@ def add():
     
     return render_template("add.html")
 
-@app.route("/delete")
+@app.route("/delete", methods=["GET", "POST"])
 def delete():
+    if request.method == "POST":
+        idx_str = request.form.get("idx")
+        try:
+            idx = int(idx_str)
+            if 0 <= idx < len(tasks):
+                tasks.pop(idx)
+        except (TypeError, ValueError):
+            pass
+        return redirect("/")
     return render_template("delete.html")
 
 

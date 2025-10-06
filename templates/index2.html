@@ -30,7 +30,10 @@
         <span class="task-text">{{ task }}</span>
         <div class="task-actions">
             <button class="edit-btn">редактировать</button>
-            <button class="delete-btn">удалить</button>
+            <form action="/delete" method="post" style="display:inline;">
+                <input type="hidden" name="idx" value="{{ loop.index0 }}">
+                <button class="delete-btn" type="submit">удалить</button>
+            </form>
         </div>
     </li>
     {% else %}
@@ -47,9 +50,7 @@
 <div class="stats">
     <span>Всего задач: 2</span>
     <span>Выполнено: 1</span>
-</div>
-<a href="/delete" class="link"> Удалить задачу </a>
-</div>
+
 
 </body>
 </html>
