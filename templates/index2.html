@@ -13,8 +13,7 @@
 
 <div class="add-task-form">
     <div class="input-group">
-        <input type="text" class="task-input" placeholder="Добавьте новую задачу...">
-        <a href="/add"><button>Добавить</button></a>
+        <a href="/add"><button>Добавить новую задачу</button></a>
     </div>
 </div>
 
@@ -25,22 +24,24 @@
 </div>
 
 <ul class="task-list">
+    {% for task in tasks %}
     <li class="task-item">
         <div class="task-checkbox"></div>
-        <span class="task-text">Пример задачи 1</span>
+        <span class="task-text">{{ task }}</span>
         <div class="task-actions">
-            <button class="edit-btn">✏️</button>
-            <button class="delete-btn">🗑</button>
+            <button class="edit-btn">редактировать</button>
+            <button class="delete-btn">удалить</button>
         </div>
     </li>
-    <li class="task-item completed">
-        <div class="task-checkbox checked"></div>
-        <span class="task-text">Выполненная задача</span>
+    {% else %}
+    <li class="task-item">
+        <div class="task-checkbox"></div>
+        <span class="task-text">пока задач нет</span>
         <div class="task-actions">
-            <button class="edit-btn">✏️</button>
-            <button class="delete-btn">🗑</button>
+            <p></p>
         </div>
     </li>
+    {% endfor %}
 </ul>
 
 <div class="stats">
