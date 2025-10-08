@@ -72,7 +72,7 @@ def delete():
 @app.route("/deletesession")
 def deleteses():
     session.pop('visited_page', None)
-    return 'УДАЛЕНО'
+    return redirect("/")
 
 if __name__ == "__main__":
     app.run()
