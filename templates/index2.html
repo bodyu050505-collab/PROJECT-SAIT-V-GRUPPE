@@ -31,7 +31,7 @@
         <div class="task-actions">
             <button class="edit-btn">редактировать</button>
             <form action="/delete" method="post" style="display:inline;">
-                <input type="hidden" name="idx" value="{{ loop.index0 }}">
+                <input type="hidden" name="task_id" value="{{ task.id }}">
                 <a href="/delete"><button class="delete-btn" type="submit">удалить</button></a>
             </form>
         </div>
